@@ -1,6 +1,6 @@
 'use strict';
 
-// User can see a display showing the current number entered or the result of the last operation.
+// User can see a display showing the display number entered or the result of the last operation.
 // User can see an entry pad containing buttons for the digits 0-9, operations - '+', '-', '/', and '=', a 'C' button (for clear), and an 'AC' button (for clear all).
 // User can enter numbers as sequences up to 8 digits long by clicking on digits in the entry pad. Entry of any digits more than 8 will be ignored.
 // User can click on an operation button to display the result of that operation on:
@@ -12,25 +12,18 @@
 // User can see 'ERR' displayed if any operation would exceed the 8 digit maximum.
 
 // Display
-const history = document.querySelector('.history');
-const current = document.querySelector('.current');
+let display = document.querySelector('.display');
+let buttons = Array.from(document.querySelectorAll('.button'));
 
-const btnSum = document.querySelector('.btn-sum');
-const btnSubtract = document.querySelector('.btn-subtract');
-const btnMultiply = document.querySelector('.btn-multiply');
-const btnDivide = document.querySelector('.btn-divide');
+buttons.map(button => {
+    button.addEventListener('click', (e) => {
+        let buttonContent = e.target.innerText;
 
-const btnDecimal = document.querySelector('.btn-decimal');
-const btnClear = document.querySelector('.btn-clear');
-const btnEquals = document.querySelector('.btn-equals');
+        if(buttonContent == 'C') {
+            display.innerText = '';
+        } else if (buttonContent == '=') {
+            display.innerText = eval(display.innerText);
+        }
+    })
 
-const getHistory = function() {
-    return history.innerText;
-}
-
-const getCurrent = function() {
-    return current.innerText;
-}
-
-console.log(getHistory());
-console.log(getCurrent());
+})
