@@ -65,7 +65,7 @@ body {
     flex-grow: 1;
 }
 
-.orange {
+button.orange {
     background-color: #dc8025 !important;
 }
 
