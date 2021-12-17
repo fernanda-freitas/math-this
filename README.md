@@ -1,6 +1,6 @@
 # ❤️‍🔥 math-this
 
 Calculator app created with html, css and Javascript with an easy code. 
-It is simple, good looking and fun.
+A simple, good looking and fun project.
 
 https://fernanda-freitas.github.io/math-this/
